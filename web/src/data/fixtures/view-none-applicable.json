@@ -1,0 +1,37 @@
+{
+  "content_hash": "18718c78fed883d6b243272332fd671aabd53d0f489a03be94338eb01cadf45e",
+  "counts": {
+    "findings": 0,
+    "model_calls": 0,
+    "review_items": 0
+  },
+  "coverage": {
+    "complete": true,
+    "completed": 4,
+    "incomplete": [],
+    "notice": "All 4 applicable checks completed. 1 check(s) did not apply to the files in this repository.",
+    "planned": 4
+  },
+  "created_at": 1789758370,
+  "error": null,
+  "failed_step": null,
+  "generation": 0,
+  "reason": null,
+  "request": {
+    "audience": "beginner",
+    "environments": [
+      "staging"
+    ],
+    "source_ref": "../../fixtures/hostile-repo"
+  },
+  "result_ref": "run/run-0b3bb9d68d44476791c003e91db5d3d6/g0/result-b098d31ac761a4cb",
+  "resumable": false,
+  "run_id": "run-0b3bb9d68d44476791c003e91db5d3d6",
+  "scan_id": "fb980b43ac9cd64cf8c41766922fab8b",
+  "schema_version": "pipeline-run-1",
+  "status": "completed",
+  "tenant_id": "demo",
+  "updated_at": 1789758398,
+  "user_id": "demo",
+  "version": 3
+}

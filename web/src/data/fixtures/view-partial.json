@@ -1,0 +1,39 @@
+{
+  "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+  "counts": {
+    "findings": 4,
+    "model_calls": 0,
+    "review_items": 1
+  },
+  "coverage": {
+    "complete": false,
+    "completed": 4,
+    "incomplete": [
+      "semgrep"
+    ],
+    "notice": "4 of 5 checks completed. semgrep failed after automatic retries (timeout). The findings shown are real, but these kinds of issue may be missing: Unsafe command execution. Processing stays denied until a complete scan; resume the run once the cause is fixed.",
+    "planned": 5
+  },
+  "created_at": 1789757733,
+  "error": null,
+  "failed_step": null,
+  "generation": 0,
+  "reason": "incomplete_checks",
+  "request": {
+    "audience": "beginner",
+    "environments": [
+      "production"
+    ],
+    "source_ref": "../../fixtures/golden-repo"
+  },
+  "result_ref": "run/run-8eb5901f8acc44c2ae5f7a76222beac0/g0/result-91c46fa5cb4dc993",
+  "resumable": true,
+  "run_id": "run-8eb5901f8acc44c2ae5f7a76222beac0",
+  "scan_id": "52dc86769eddfb25971549e9cc47f86f",
+  "schema_version": "pipeline-run-1",
+  "status": "partial",
+  "tenant_id": "demo",
+  "updated_at": 1789757741,
+  "user_id": "demo",
+  "version": 3
+}

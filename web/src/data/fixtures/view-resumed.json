@@ -1,0 +1,37 @@
+{
+  "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+  "counts": {
+    "findings": 4,
+    "model_calls": 0,
+    "review_items": 0
+  },
+  "coverage": {
+    "complete": true,
+    "completed": 5,
+    "incomplete": [],
+    "notice": "All 5 applicable checks completed.",
+    "planned": 5
+  },
+  "created_at": 1789757733,
+  "error": null,
+  "failed_step": null,
+  "generation": 1,
+  "reason": null,
+  "request": {
+    "audience": "beginner",
+    "environments": [
+      "production"
+    ],
+    "source_ref": "../../fixtures/golden-repo"
+  },
+  "result_ref": "run/run-8eb5901f8acc44c2ae5f7a76222beac0/g1/result-205f469dddd58e32",
+  "resumable": false,
+  "run_id": "run-8eb5901f8acc44c2ae5f7a76222beac0",
+  "scan_id": "52dc86769eddfb25971549e9cc47f86f",
+  "schema_version": "pipeline-run-1",
+  "status": "completed",
+  "tenant_id": "demo",
+  "updated_at": 1789758060,
+  "user_id": "demo",
+  "version": 7
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+    "created_at": 1789757738,
+    "disposition": "retry_exhausted",
+    "error": "DetectorTimeout",
+    "generation": 0,
+    "reason": "timeout",
+    "review_id": "00142220bed02b3dfb207226",
+    "run_id": "run-8eb5901f8acc44c2ae5f7a76222beac0",
+    "scan_id": "52dc86769eddfb25971549e9cc47f86f",
+    "schema_version": "review-item-1",
+    "status": "open",
+    "step": "semgrep",
+    "tenant_id": "demo"
+  }
+]

@@ -1,0 +1,921 @@
+{
+  "artifacts": {
+    "explanation_ref": "run/run-8eb5901f8acc44c2ae5f7a76222beac0/g0/explanation-2abf10712a44cbc9",
+    "policy_ref": "run/run-8eb5901f8acc44c2ae5f7a76222beac0/g0/policy-04a32ad8e4b30d5f",
+    "report_ref": "run/run-8eb5901f8acc44c2ae5f7a76222beac0/g0/report-04a32ad8e4b30d5f"
+  },
+  "completed_at": 1789757741,
+  "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+  "coverage": {
+    "checks": [
+      {
+        "cached": false,
+        "categories": [
+          "secret"
+        ],
+        "check": "gitleaks",
+        "findings": 0,
+        "status": "succeeded"
+      },
+      {
+        "categories": [
+          "unsafe_command_execution"
+        ],
+        "check": "semgrep",
+        "disposition": "retry_exhausted",
+        "reason": "timeout",
+        "review_id": "00142220bed02b3dfb207226",
+        "status": "incomplete"
+      },
+      {
+        "cached": false,
+        "categories": [
+          "iam_wildcard"
+        ],
+        "check": "checkov",
+        "findings": 1,
+        "status": "succeeded"
+      },
+      {
+        "cached": false,
+        "categories": [
+          "missing_environment_variable"
+        ],
+        "check": "missing-environment",
+        "findings": 1,
+        "status": "succeeded"
+      },
+      {
+        "cached": false,
+        "categories": [
+          "missing_auth",
+          "missing_input_validation"
+        ],
+        "check": "route-safety",
+        "findings": 2,
+        "status": "succeeded"
+      }
+    ],
+    "complete": false,
+    "completed": 4,
+    "incomplete": [
+      {
+        "check": "semgrep",
+        "disposition": "retry_exhausted",
+        "reason": "timeout",
+        "review_id": "00142220bed02b3dfb207226"
+      }
+    ],
+    "missing_categories": [
+      "unsafe_command_execution"
+    ],
+    "not_applicable": [],
+    "notice": "4 of 5 checks completed. semgrep failed after automatic retries (timeout). The findings shown are real, but these kinds of issue may be missing: Unsafe command execution. Processing stays denied until a complete scan; resume the run once the cause is fixed.",
+    "planned": 5
+  },
+  "error": null,
+  "explanation": {
+    "report": {
+      "audience": "beginner",
+      "decisions_unchanged": true,
+      "findings": {
+        "124f518f850237dd6d31": "G1",
+        "3d8b5e9a16c9d950ca3a": "G2",
+        "db99e29743c2aed05643": "G3",
+        "f53c1234e5bcf94a6522": "G4"
+      },
+      "models": {},
+      "policy_version": "18e30ec2ebdd1d4742c941360f8d6327a5a4adc059e990452db34e6e8e77a102",
+      "provider": "none",
+      "scan": {
+        "categories": {
+          "iam_wildcard": 1,
+          "missing_auth": 1,
+          "missing_environment_variable": 1,
+          "missing_input_validation": 1
+        },
+        "complete": false,
+        "detector_errors": 1,
+        "environment": "production",
+        "findings": 4,
+        "groups": 4,
+        "processing": "individual"
+      },
+      "schema_version": "reasoning-report-1",
+      "source_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+      "status": "complete",
+      "summary": {
+        "by_status": {
+          "deterministic": 5
+        },
+        "requires_human_review": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "units": 5
+      },
+      "synthesis": {
+        "attempts": [],
+        "cached": false,
+        "kind": "synthesis",
+        "model": null,
+        "note": null,
+        "priority_order": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "requires_human_review": false,
+        "review_reasons": [],
+        "routing": {
+          "escalated_from": null,
+          "escalation_reason": null,
+          "features": {
+            "categories": 4,
+            "compound_risk": 2,
+            "groups": 4,
+            "incomplete_scan": 3,
+            "production": 2
+          },
+          "forced": "policy_denied",
+          "score": 15,
+          "tier": "deterministic"
+        },
+        "source": "template",
+        "status": "deterministic",
+        "synthesis": {
+          "combined_risks": [
+            {
+              "group_ids": [
+                "G2",
+                "G3",
+                "G4"
+              ],
+              "refs": [
+                "G2",
+                "G3",
+                "G4"
+              ],
+              "risk": "3 different issues affect src/app.py; fix them together so one change does not undo another."
+            }
+          ],
+          "escalation": "none",
+          "headline": "4 finding(s) in 4 group(s); 4 need review or are blocked",
+          "next_step": "Start with G1: List the specific operations the application's code performs with this role.",
+          "overview": "The most urgent issue is over-permissive iam policy at infra/template.yaml line 3. Work through the groups in the priority order below. The scan is incomplete, so other issues may be missing.",
+          "priorities": [
+            {
+              "group_id": "G1",
+              "refs": [
+                "G1",
+                "G1.severity",
+                "G1.decision"
+              ],
+              "why_now": "Over-permissive IAM policy, high severity, blocked from processing."
+            },
+            {
+              "group_id": "G2",
+              "refs": [
+                "G2",
+                "G2.severity",
+                "G2.decision"
+              ],
+              "why_now": "Route without an authorization check, high severity, blocked from processing."
+            },
+            {
+              "group_id": "G3",
+              "refs": [
+                "G3",
+                "G3.severity",
+                "G3.decision"
+              ],
+              "why_now": "Request input used without validation, medium severity, blocked from processing."
+            },
+            {
+              "group_id": "G4",
+              "refs": [
+                "G4",
+                "G4.severity",
+                "G4.decision"
+              ],
+              "why_now": "Undeclared required environment variable, medium severity, blocked from processing."
+            }
+          ]
+        },
+        "unit_id": "SYNTHESIS"
+      },
+      "units": [
+        {
+          "attempts": [],
+          "cached": false,
+          "category": "iam_wildcard",
+          "decision": "deny",
+          "evidence_class": "detector_or_heuristic",
+          "explanation": {
+            "escalation": "none",
+            "fix_steps": [
+              {
+                "action": "List the specific operations the application's code performs with this role.",
+                "refs": [
+                  "G1",
+                  "G1.L1"
+                ]
+              },
+              {
+                "action": "Replace the broad grant with only those actions, scoped to the specific resources they touch (least privilege).",
+                "refs": [
+                  "G1",
+                  "G1.L1"
+                ]
+              },
+              {
+                "action": "Generate the change with first-commit propose-iam so the no-expansion proof and local validation run before any pull request.",
+                "refs": [
+                  "G1",
+                  "G1.L1"
+                ]
+              }
+            ],
+            "headline": "Over-permissive IAM policy at infra/template.yaml line 3",
+            "impact": "privilege_escalation",
+            "refs": [
+              "G1",
+              "G1.decision",
+              "G1.L1"
+            ],
+            "uncertainty": [
+              "The evidence does not show which AWS actions the application actually needs."
+            ],
+            "verify": [
+              "Run the scan again and confirm these Checkov IAM checks pass.",
+              "Exercise the application's normal paths and confirm no access-denied errors."
+            ],
+            "what_happened": "Checkov checks CKV_AWS_108, CKV_AWS_109, CKV_AWS_111 failed for AWS::IAM::Role.UploadFunctionRole in infra/template.yaml line 3: the policy grants actions or resources without constraints.",
+            "why_it_matters": "If this role's code or credentials are misused, the broad grant lets an attacker reach far more than the application needs, potentially every matching resource in the account."
+          },
+          "finding_ids": [
+            "124f518f850237dd6d31"
+          ],
+          "kind": "group",
+          "label": "Over-permissive IAM policy",
+          "locations": [
+            {
+              "line": 3,
+              "path": "infra/template.yaml"
+            }
+          ],
+          "locations_omitted": 0,
+          "model": null,
+          "note": null,
+          "policy_reasons": [
+            "high-risk-requires-review",
+            "iam-requires-review",
+            "missing-or-invalid-context",
+            "production-or-conflicting-environment"
+          ],
+          "requires_human_review": true,
+          "review_reasons": [],
+          "routing": {
+            "escalated_from": null,
+            "escalation_reason": null,
+            "features": {
+              "category_iam_wildcard": 3,
+              "needs_review_or_denied": 1,
+              "production": 2,
+              "severity_high": 2
+            },
+            "forced": "policy_denied",
+            "score": 8,
+            "tier": "deterministic"
+          },
+          "rule": "iam-policy-overly-permissive",
+          "severity": "high",
+          "source": "template",
+          "status": "deterministic",
+          "unit_id": "G1"
+        },
+        {
+          "attempts": [],
+          "cached": false,
+          "category": "missing_auth",
+          "decision": "deny",
+          "evidence_class": "detector_or_heuristic",
+          "explanation": {
+            "escalation": "none",
+            "fix_steps": [
+              {
+                "action": "Decide who is allowed to call this route and what data they may touch.",
+                "refs": [
+                  "G2",
+                  "G2.L1"
+                ]
+              },
+              {
+                "action": "Add your framework's authentication check before the handler runs, for example a login-required decorator.",
+                "refs": [
+                  "G2",
+                  "G2.L1"
+                ]
+              },
+              {
+                "action": "Inside the handler, check that the signed-in user is authorized for the specific record, not just logged in.",
+                "refs": [
+                  "G2",
+                  "G2.L1"
+                ]
+              }
+            ],
+            "headline": "Route without an authorization check at src/app.py line 9",
+            "impact": "unauthorized_access",
+            "refs": [
+              "G2",
+              "G2.decision",
+              "G2.L1"
+            ],
+            "uncertainty": [
+              "The detector cannot see protection added by middleware or an API gateway."
+            ],
+            "verify": [
+              "Call the route without credentials and confirm it returns 401 or 403.",
+              "Call it as a different user and confirm they cannot reach another user's data."
+            ],
+            "what_happened": "The route handler at src/app.py line 9 does not call any authorization check that First Commit recognizes, such as a login-required decorator or a current-user check.",
+            "why_it_matters": "If nothing else protects this route, anyone who can reach the URL can call it without signing in, and may read or change data that is not theirs."
+          },
+          "finding_ids": [
+            "3d8b5e9a16c9d950ca3a"
+          ],
+          "kind": "group",
+          "label": "Route without an authorization check",
+          "locations": [
+            {
+              "line": 9,
+              "path": "src/app.py"
+            }
+          ],
+          "locations_omitted": 0,
+          "model": null,
+          "note": null,
+          "policy_reasons": [
+            "auth-requires-review",
+            "compound-risk",
+            "high-risk-requires-review",
+            "missing-or-invalid-context",
+            "production-or-conflicting-environment"
+          ],
+          "requires_human_review": true,
+          "review_reasons": [],
+          "routing": {
+            "escalated_from": null,
+            "escalation_reason": null,
+            "features": {
+              "category_missing_auth": 2,
+              "compound_risk": 1,
+              "needs_review_or_denied": 1,
+              "production": 2,
+              "severity_high": 2
+            },
+            "forced": "policy_denied",
+            "score": 8,
+            "tier": "deterministic"
+          },
+          "rule": "route-missing-auth",
+          "severity": "high",
+          "source": "template",
+          "status": "deterministic",
+          "unit_id": "G2"
+        },
+        {
+          "attempts": [],
+          "cached": false,
+          "category": "missing_input_validation",
+          "decision": "deny",
+          "evidence_class": "detector_or_heuristic",
+          "explanation": {
+            "escalation": "none",
+            "fix_steps": [
+              {
+                "action": "Define a schema for the request body: required fields, types, lengths and allowed values.",
+                "refs": [
+                  "G3",
+                  "G3.L1"
+                ]
+              },
+              {
+                "action": "Validate the input against that schema before using it, and reject invalid input with a 400 response.",
+                "refs": [
+                  "G3",
+                  "G3.L1"
+                ]
+              },
+              {
+                "action": "Use only the validated values in the rest of the handler.",
+                "refs": [
+                  "G3",
+                  "G3.L1"
+                ]
+              }
+            ],
+            "headline": "Request input used without validation at src/app.py line 9",
+            "impact": "data_exposure",
+            "refs": [
+              "G3",
+              "G3.decision",
+              "G3.L1"
+            ],
+            "uncertainty": [
+              "The detector cannot see validation performed in a separate helper."
+            ],
+            "verify": [
+              "Send a request with a missing or wrong-typed field and confirm it is rejected with a 400."
+            ],
+            "what_happened": "The route at src/app.py line 9 reads request data without a validation step First Commit recognizes, such as a schema load or model validation.",
+            "why_it_matters": "Request data comes from whoever calls the route. Unchecked values can crash the handler, store corrupted data, or reach queries and files in unsafe forms."
+          },
+          "finding_ids": [
+            "db99e29743c2aed05643"
+          ],
+          "kind": "group",
+          "label": "Request input used without validation",
+          "locations": [
+            {
+              "line": 9,
+              "path": "src/app.py"
+            }
+          ],
+          "locations_omitted": 0,
+          "model": null,
+          "note": null,
+          "policy_reasons": [
+            "compound-risk",
+            "missing-or-invalid-context",
+            "production-or-conflicting-environment"
+          ],
+          "requires_human_review": true,
+          "review_reasons": [],
+          "routing": {
+            "escalated_from": null,
+            "escalation_reason": null,
+            "features": {
+              "category_missing_input_validation": 1,
+              "compound_risk": 1,
+              "needs_review_or_denied": 1,
+              "production": 2,
+              "severity_medium": 1
+            },
+            "forced": "policy_denied",
+            "score": 6,
+            "tier": "deterministic"
+          },
+          "rule": "route-missing-input-validation",
+          "severity": "medium",
+          "source": "template",
+          "status": "deterministic",
+          "unit_id": "G3"
+        },
+        {
+          "attempts": [],
+          "cached": false,
+          "category": "missing_environment_variable",
+          "decision": "deny",
+          "evidence_class": "deterministic_fact",
+          "explanation": {
+            "escalation": "none",
+            "fix_steps": [
+              {
+                "action": "Declare PHOTO_API_KEY in the deployment template's environment variables, or document it in .env.example.",
+                "refs": [
+                  "G4",
+                  "G4.L1"
+                ]
+              },
+              {
+                "action": "If the value is a secret, store it in a secret store such as SSM Parameter Store and reference it instead of writing the value.",
+                "refs": [
+                  "G4",
+                  "G4.L1"
+                ]
+              }
+            ],
+            "headline": "Undeclared required environment variable at src/app.py line 6",
+            "impact": "runtime_failure",
+            "refs": [
+              "G4",
+              "G4.decision",
+              "G4.L1"
+            ],
+            "uncertainty": [],
+            "verify": [
+              "Run the scan again and confirm this variable is reported as declared."
+            ],
+            "what_happened": "The code at src/app.py line 6 requires PHOTO_API_KEY, but no template or .env.example in the repository declares it.",
+            "why_it_matters": "When the application starts somewhere this variable is not set, such as a fresh deploy, it fails immediately with a missing-key error."
+          },
+          "finding_ids": [
+            "f53c1234e5bcf94a6522"
+          ],
+          "kind": "group",
+          "label": "Undeclared required environment variable",
+          "locations": [
+            {
+              "line": 6,
+              "path": "src/app.py"
+            }
+          ],
+          "locations_omitted": 0,
+          "model": null,
+          "note": null,
+          "policy_reasons": [
+            "compound-risk",
+            "missing-or-invalid-context",
+            "production-or-conflicting-environment"
+          ],
+          "requires_human_review": true,
+          "review_reasons": [],
+          "routing": {
+            "escalated_from": null,
+            "escalation_reason": null,
+            "features": {
+              "compound_risk": 1,
+              "deterministic_fact": -1,
+              "needs_review_or_denied": 1,
+              "production": 2,
+              "severity_medium": 1
+            },
+            "forced": "policy_denied",
+            "score": 4,
+            "tier": "deterministic"
+          },
+          "rule": "missing-required-environment",
+          "severity": "medium",
+          "source": "template",
+          "status": "deterministic",
+          "unit_id": "G4"
+        }
+      ],
+      "usage": {
+        "budget": {
+          "max_calls": 12,
+          "max_cost_usd": 0.5
+        },
+        "budget_exhausted": false,
+        "cache_read_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "calls_by_tier": {},
+        "circuit_open": null,
+        "cost_basis": "anthropic_first_party_list_price",
+        "estimated_cost_usd": 0.0,
+        "events": {
+          "deterministic_units": 5
+        },
+        "input_tokens": 0,
+        "model_calls": 0,
+        "model_calls_avoided": 5,
+        "output_tokens": 0,
+        "prompts": [],
+        "provider_failures": {},
+        "throttled": 0
+      },
+      "versions": {
+        "contract": "reasoning-contract-1",
+        "knowledge": "5fe8d0a29c8e308a",
+        "packet": "evidence-packet-1",
+        "prompt": "85fba530f0681373",
+        "query": "query-1",
+        "router": "router-1"
+      }
+    },
+    "status": "complete"
+  },
+  "failed_step": null,
+  "findings": [
+    {
+      "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+      "evidence": {
+        "detector": "checkov",
+        "message": "IAM policy grants unconstrained access: CKV_AWS_108, CKV_AWS_109, CKV_AWS_111",
+        "metadata": {
+          "checks": [
+            "CKV_AWS_108",
+            "CKV_AWS_109",
+            "CKV_AWS_111"
+          ],
+          "inline_suppressed_checks": [],
+          "resource": "AWS::IAM::Role.UploadFunctionRole"
+        },
+        "rule_id": "iam-policy-overly-permissive"
+      },
+      "finding_id": "124f518f850237dd6d31",
+      "finding_type": "iam_wildcard",
+      "location": {
+        "end_line": 3,
+        "path": "infra/template.yaml",
+        "start_line": 3
+      },
+      "schema_version": "1.0",
+      "severity": "high"
+    },
+    {
+      "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+      "evidence": {
+        "detector": "first-commit-patterns",
+        "message": "PHOTO_API_KEY is required at runtime but is not declared in a template or .env.example.",
+        "metadata": {
+          "environment_variable": "PHOTO_API_KEY"
+        },
+        "rule_id": "missing-required-environment"
+      },
+      "finding_id": "f53c1234e5bcf94a6522",
+      "finding_type": "missing_environment_variable",
+      "location": {
+        "end_line": 6,
+        "path": "src/app.py",
+        "start_line": 6
+      },
+      "schema_version": "1.0",
+      "severity": "medium"
+    },
+    {
+      "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+      "evidence": {
+        "detector": "first-commit-patterns",
+        "message": "Route handler has no recognized authorization check.",
+        "metadata": {},
+        "rule_id": "route-missing-auth"
+      },
+      "finding_id": "3d8b5e9a16c9d950ca3a",
+      "finding_type": "missing_auth",
+      "location": {
+        "end_line": 9,
+        "path": "src/app.py",
+        "start_line": 9
+      },
+      "schema_version": "1.0",
+      "severity": "high"
+    },
+    {
+      "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+      "evidence": {
+        "detector": "first-commit-patterns",
+        "message": "Route reads request input without a recognized validation step.",
+        "metadata": {},
+        "rule_id": "route-missing-input-validation"
+      },
+      "finding_id": "db99e29743c2aed05643",
+      "finding_type": "missing_input_validation",
+      "location": {
+        "end_line": 9,
+        "path": "src/app.py",
+        "start_line": 9
+      },
+      "schema_version": "1.0",
+      "severity": "medium"
+    }
+  ],
+  "generation": 0,
+  "pipeline_version": "pipeline-1",
+  "policy": {
+    "decisions": [
+      {
+        "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+        "effective_environment": "production",
+        "effective_severity": "high",
+        "evaluation_error": false,
+        "evidence_class": "detector_or_heuristic",
+        "finding_id": "124f518f850237dd6d31",
+        "outcome": "deny",
+        "policy_version": "18e30ec2ebdd1d4742c941360f8d6327a5a4adc059e990452db34e6e8e77a102",
+        "reasons": [
+          "high-risk-requires-review",
+          "iam-requires-review",
+          "missing-or-invalid-context",
+          "production-or-conflicting-environment"
+        ],
+        "resource_count": 1
+      },
+      {
+        "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+        "effective_environment": "production",
+        "effective_severity": "high",
+        "evaluation_error": false,
+        "evidence_class": "detector_or_heuristic",
+        "finding_id": "3d8b5e9a16c9d950ca3a",
+        "outcome": "deny",
+        "policy_version": "18e30ec2ebdd1d4742c941360f8d6327a5a4adc059e990452db34e6e8e77a102",
+        "reasons": [
+          "auth-requires-review",
+          "compound-risk",
+          "high-risk-requires-review",
+          "missing-or-invalid-context",
+          "production-or-conflicting-environment"
+        ],
+        "resource_count": 3
+      },
+      {
+        "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+        "effective_environment": "production",
+        "effective_severity": "medium",
+        "evaluation_error": false,
+        "evidence_class": "deterministic_fact",
+        "finding_id": "f53c1234e5bcf94a6522",
+        "outcome": "deny",
+        "policy_version": "18e30ec2ebdd1d4742c941360f8d6327a5a4adc059e990452db34e6e8e77a102",
+        "reasons": [
+          "compound-risk",
+          "missing-or-invalid-context",
+          "production-or-conflicting-environment"
+        ],
+        "resource_count": 3
+      },
+      {
+        "content_hash": "92482eb69396b08d78302f96d3a35d3a3b1ca865c9df7f41b164c408ced77083",
+        "effective_environment": "production",
+        "effective_severity": "medium",
+        "evaluation_error": false,
+        "evidence_class": "detector_or_heuristic",
+        "finding_id": "db99e29743c2aed05643",
+        "outcome": "deny",
+        "policy_version": "18e30ec2ebdd1d4742c941360f8d6327a5a4adc059e990452db34e6e8e77a102",
+        "reasons": [
+          "compound-risk",
+          "missing-or-invalid-context",
+          "production-or-conflicting-environment"
+        ],
+        "resource_count": 3
+      }
+    ],
+    "policy_version": "18e30ec2ebdd1d4742c941360f8d6327a5a4adc059e990452db34e6e8e77a102",
+    "processing": "individual",
+    "reason": null,
+    "status": "evaluated"
+  },
+  "reason": "incomplete_checks",
+  "resumable": true,
+  "review_items": [
+    "00142220bed02b3dfb207226"
+  ],
+  "run_id": "run-8eb5901f8acc44c2ae5f7a76222beac0",
+  "scan_id": "52dc86769eddfb25971549e9cc47f86f",
+  "schema_version": "pipeline-result-1",
+  "source": {
+    "kind": "directory",
+    "label": "fixtures/golden-repo",
+    "revision": null
+  },
+  "status": "partial",
+  "trace": [
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Prepare"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Prepare"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RoutePrepared"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Detect"
+    },
+    {
+      "event": "entered",
+      "map_index": 0,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 1,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 2,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 3,
+      "state": "RunDetector"
+    },
+    {
+      "attempt": 1,
+      "delay": 5.0,
+      "error": "DetectorTimeout",
+      "event": "retry",
+      "map_index": 1,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 4,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 4,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 3,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 0,
+      "state": "RunDetector"
+    },
+    {
+      "error": "DetectorTimeout",
+      "event": "caught",
+      "map_index": 1,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 1,
+      "state": "RecordIncompleteCheck"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 1,
+      "state": "RecordIncompleteCheck"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 2,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Detect"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Merge"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Merge"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RouteMerged"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Explain"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Explain"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Finalize"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Finalize"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RouteOutcome"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Done"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Done"
+    }
+  ],
+  "usage": {
+    "detectors_reused": 0,
+    "detectors_run": 4,
+    "estimated_model_cost_usd": 0.0,
+    "model_calls": 0
+  }
+}

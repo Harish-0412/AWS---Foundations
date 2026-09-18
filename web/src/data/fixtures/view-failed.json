@@ -1,0 +1,35 @@
+{
+  "content_hash": null,
+  "counts": {
+    "findings": 0,
+    "model_calls": 0,
+    "review_items": 0
+  },
+  "coverage": {
+    "complete": false,
+    "completed": 0,
+    "incomplete": [],
+    "notice": null,
+    "planned": 0
+  },
+  "created_at": 1789757743,
+  "error": "ScanRejected",
+  "failed_step": null,
+  "generation": 0,
+  "reason": "file_size_exceeded",
+  "request": {
+    "audience": "beginner",
+    "environments": [],
+    "source_ref": "big"
+  },
+  "result_ref": "run/run-f3175bb87c954c6bb2b3f761febc560b/g0/result-fe44a8cccd89edae",
+  "resumable": false,
+  "run_id": "run-f3175bb87c954c6bb2b3f761febc560b",
+  "scan_id": null,
+  "schema_version": "pipeline-run-1",
+  "status": "failed",
+  "tenant_id": "demo",
+  "updated_at": 1789757743,
+  "user_id": "demo",
+  "version": 2
+}

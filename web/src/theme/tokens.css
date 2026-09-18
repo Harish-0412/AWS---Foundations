@@ -1,0 +1,112 @@
+/**
+ * Design tokens. Two independent colour scales that must never share hues:
+ * severity (informational) is a warm ramp; decision (actionable) is a cool family.
+ * Coverage uses amber/red/neutral. Nothing in a component names a raw colour.
+ */
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  color-scheme: light dark;
+
+  --surface: #fbfaf7;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f2f0eb;
+  --line: #e2ded5;
+  --line-strong: #c8c2b4;
+  --text: #24211c;
+  --text-muted: #5c574e;
+  --text-faint: #8b857a;
+  --accent: #3d4ea8;
+
+  --warn: #8a5a00;
+  --warn-fill: #fdf3dd;
+  --error: #9b2c1f;
+  --error-fill: #fbeae6;
+
+  /* Severity: one warm ramp, weight-coded, always paired with its label. */
+  --severity-critical: #7f1d1d;
+  --severity-high: #9b3d17;
+  --severity-medium: #8a5a00;
+  --severity-low: #6b6449;
+  --severity-info: #6b675e;
+
+  /* Decision: a distinct cool family. */
+  --decision-deny: #7a1f45;
+  --decision-review: #2f4a7a;
+  --decision-permit: #2c5a4b;
+
+  /* Coverage. Complete is neutral with a check, never a green celebration. */
+  --coverage-partial: var(--warn);
+  --coverage-failed: var(--error);
+  --coverage-complete: var(--text-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #14140f;
+    --surface-raised: #1c1b16;
+    --surface-sunken: #100f0c;
+    --line: #302e26;
+    --line-strong: #474337;
+    --text: #f0ece2;
+    --text-muted: #b3ada0;
+    --text-faint: #837d70;
+    --accent: #a9b6ff;
+
+    --warn: #e0b062;
+    --warn-fill: #2c2515;
+    --error: #f0a397;
+    --error-fill: #2e1b17;
+
+    --severity-critical: #f3a19a;
+    --severity-high: #efa87a;
+    --severity-medium: #e0b062;
+    --severity-low: #c2bba4;
+    --severity-info: #b3ada0;
+
+    --decision-deny: #f0a0bd;
+    --decision-review: #a4bcf0;
+    --decision-permit: #8fcbb4;
+
+    --coverage-partial: var(--warn);
+    --coverage-failed: var(--error);
+    --coverage-complete: var(--text-muted);
+  }
+}
+
+:root[data-theme="dark"] {
+  --surface: #14140f;
+  --surface-raised: #1c1b16;
+  --surface-sunken: #100f0c;
+  --line: #302e26;
+  --line-strong: #474337;
+  --text: #f0ece2;
+  --text-muted: #b3ada0;
+  --text-faint: #837d70;
+  --accent: #a9b6ff;
+
+  --warn: #e0b062;
+  --warn-fill: #2c2515;
+  --error: #f0a397;
+  --error-fill: #2e1b17;
+
+  --severity-critical: #f3a19a;
+  --severity-high: #efa87a;
+  --severity-medium: #e0b062;
+  --severity-low: #c2bba4;
+  --severity-info: #b3ada0;
+
+  --decision-deny: #f0a0bd;
+  --decision-review: #a4bcf0;
+  --decision-permit: #8fcbb4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "completed_at": 1789757743,
+  "content_hash": null,
+  "coverage": null,
+  "error": "ScanRejected",
+  "explanation": null,
+  "failed_step": null,
+  "findings": [],
+  "generation": 0,
+  "pipeline_version": "pipeline-1",
+  "policy": null,
+  "reason": "file_size_exceeded",
+  "resumable": false,
+  "review_items": [],
+  "run_id": "run-f3175bb87c954c6bb2b3f761febc560b",
+  "scan_id": null,
+  "schema_version": "pipeline-result-1",
+  "source": {
+    "kind": null,
+    "label": null,
+    "revision": null
+  },
+  "status": "failed",
+  "trace": [
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Prepare"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Prepare"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RoutePrepared"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Finalize"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Finalize"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RouteOutcome"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "ScanFailed"
+    },
+    {
+      "error": "ScanFailed",
+      "event": "failed",
+      "state": "ScanFailed"
+    }
+  ],
+  "usage": {
+    "detectors_reused": 0,
+    "detectors_run": 0,
+    "model_calls": 0
+  }
+}

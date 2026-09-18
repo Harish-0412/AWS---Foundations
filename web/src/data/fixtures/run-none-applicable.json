@@ -1,0 +1,207 @@
+{
+  "artifacts": {
+    "explanation_ref": null,
+    "policy_ref": "run/run-0b3bb9d68d44476791c003e91db5d3d6/g0/policy-bf854da444bba54e",
+    "report_ref": "run/run-0b3bb9d68d44476791c003e91db5d3d6/g0/report-bf854da444bba54e"
+  },
+  "completed_at": 1789758398,
+  "content_hash": "18718c78fed883d6b243272332fd671aabd53d0f489a03be94338eb01cadf45e",
+  "coverage": {
+    "checks": [
+      {
+        "cached": false,
+        "categories": [
+          "secret"
+        ],
+        "check": "gitleaks",
+        "findings": 0,
+        "status": "succeeded"
+      },
+      {
+        "cached": false,
+        "categories": [
+          "unsafe_command_execution"
+        ],
+        "check": "semgrep",
+        "findings": 0,
+        "status": "succeeded"
+      },
+      {
+        "cached": false,
+        "categories": [
+          "missing_environment_variable"
+        ],
+        "check": "missing-environment",
+        "findings": 0,
+        "status": "succeeded"
+      },
+      {
+        "cached": false,
+        "categories": [
+          "missing_auth",
+          "missing_input_validation"
+        ],
+        "check": "route-safety",
+        "findings": 0,
+        "status": "succeeded"
+      },
+      {
+        "categories": [
+          "iam_wildcard"
+        ],
+        "check": "checkov",
+        "status": "not_applicable"
+      }
+    ],
+    "complete": true,
+    "completed": 4,
+    "incomplete": [],
+    "missing_categories": [],
+    "not_applicable": [
+      "checkov"
+    ],
+    "notice": "All 4 applicable checks completed. 1 check(s) did not apply to the files in this repository.",
+    "planned": 4
+  },
+  "error": null,
+  "explanation": {
+    "report": null,
+    "status": "skipped"
+  },
+  "failed_step": null,
+  "findings": [],
+  "generation": 0,
+  "pipeline_version": "pipeline-1",
+  "policy": {
+    "decisions": [],
+    "policy_version": "18e30ec2ebdd1d4742c941360f8d6327a5a4adc059e990452db34e6e8e77a102",
+    "processing": "individual",
+    "reason": null,
+    "status": "evaluated"
+  },
+  "reason": null,
+  "resumable": false,
+  "review_items": [],
+  "run_id": "run-0b3bb9d68d44476791c003e91db5d3d6",
+  "scan_id": "fb980b43ac9cd64cf8c41766922fab8b",
+  "schema_version": "pipeline-result-1",
+  "source": {
+    "kind": "directory",
+    "label": "fixtures/hostile-repo",
+    "revision": null
+  },
+  "status": "completed",
+  "trace": [
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Prepare"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Prepare"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RoutePrepared"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Detect"
+    },
+    {
+      "event": "entered",
+      "map_index": 0,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 1,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 2,
+      "state": "RunDetector"
+    },
+    {
+      "event": "entered",
+      "map_index": 3,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 3,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 2,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 0,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": 1,
+      "state": "RunDetector"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Detect"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Merge"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Merge"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RouteMerged"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Finalize"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Finalize"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "RouteOutcome"
+    },
+    {
+      "event": "entered",
+      "map_index": null,
+      "state": "Done"
+    },
+    {
+      "event": "succeeded",
+      "map_index": null,
+      "state": "Done"
+    }
+  ],
+  "usage": {
+    "detectors_reused": 0,
+    "detectors_run": 4,
+    "estimated_model_cost_usd": 0.0,
+    "model_calls": 0
+  }
+}
